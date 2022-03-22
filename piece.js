@@ -1,4 +1,19 @@
 class Piece {
+  constructor(ctx) {
+    this.ctx = ctx;
+
+    this.color = "blue";
+    this.shape = [
+      [2, 0, 0],
+      [2, 2, 2],
+      [0, 0, 0],
+    ];
+
+    // Starting position.
+    this.x = 3;
+    this.y = 0;
+  }
+
   draw() {
     this.ctx.fillStyle = this.color;
     this.shape.forEach((row, y) => {
@@ -8,5 +23,11 @@ class Piece {
         }
       });
     });
+  }
+
+  move(p) {
+    this.x = p.x;
+    this.y = p.y;
+    this.shape = p.shape;
   }
 }
