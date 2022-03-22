@@ -1,7 +1,7 @@
 # click-me-to-play-tetris
 Welcome to my repo! 
 
-If you are bored, please enjoy playing tetris i built for you 😀
+If you are bored, how about some tetris?
 
 👉 https://click-me-to-play-tetris.vercel.app/
 
