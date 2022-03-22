@@ -7,7 +7,7 @@ If you are board, please enjoy playing tetris i built for you 😀
 
 ### 🕹 controls:
 
-force-down: space
+force-down: space bar
 
 rotate the block: ⬆️
 
