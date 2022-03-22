@@ -8,11 +8,12 @@ ctx.canvas.height = ROWS * BLOCK_SIZE;
 // Scale blocks
 ctx.scale(BLOCK_SIZE, BLOCK_SIZE);
 
-const moves = {
+moves = {
   [KEY.LEFT]: (p) => ({ ...p, x: p.x - 1 }),
   [KEY.RIGHT]: (p) => ({ ...p, x: p.x + 1 }),
   [KEY.DOWN]: (p) => ({ ...p, y: p.y + 1 }),
   [KEY.UP]: (p) => board.rotate(p),
+  [KEY.SPACE]: (p) => ({ ...p, y: p.y + 1 }),
 };
 
 let board = new Board();
@@ -25,9 +26,18 @@ function handleKeyPress(event) {
     // Get new state of piece
     let p = moves[event.keyCode](board.piece);
 
-    board.piece.move(p);
+    if (event.keyCode === KEY.SPACE) {
+      // Hard drop
+      while (board.valid(p)) {
+        board.piece.move(p);
+        p = moves[KEY.SPACE](board.piece);
+      }
+    }
 
-    draw();
+    if (board.valid(p)) {
+      board.piece.move(p);
+      draw();
+    }
   }
 }
 
