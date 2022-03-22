@@ -8,6 +8,7 @@ If you are board, please enjoy playing tetris i built for you 😀
 ### 🕹 controls:
 
 force-down: space
+
 rotate the block: ⬆️
 
 move left: ⬅️
